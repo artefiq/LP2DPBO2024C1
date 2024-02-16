@@ -91,7 +91,7 @@ public class Tabel {
         System.out.println("");
 
         int maxStrip = Shirt.getMaxId() + Shirt.getMaxName() + Shirt.getMaxbrand() + Shirt.getMaxsize()
-                + Shirt.getMaxmaterial() + Shirt.getMaxgender() + Shirt.getMaxcolor() + Shirt.getMaxprice();
+                + Shirt.getMaxmaterial() + Shirt.getMaxgender() + Shirt.getMaxcolor() + Shirt.getMaxprice() + Shirt.getMaxsleeveType();
         for (i = 0; i < maxStrip + (2 * 9) + 10; i++) {
             System.out.print("-");
         }
