@@ -11,6 +11,20 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ArrayList<Shirt> list = new ArrayList<>(); // ArrayList untuk menyimpan objek Shirt
 
+        // tambahkan item kedalam list menggunakan constructor
+        // item 1
+        Shirt newShirt1 = new Shirt("1A", "Kaos", "Gucci", "2501837", "M", "Cotton",
+                "L", "Blue", "Lengan Pendek");
+        list.add(newShirt1);
+        // item 2
+        Shirt newShirt2 = new Shirt("1B", "Kemeja", "LV", "38476210", "L", "Linen",
+                "Female", "Pink", "Short");
+        list.add(newShirt2);
+        // item 3
+        Shirt newShirt3 = new Shirt("2A", "T-Shirt", "YSL", "59184756", "XL", "Cotton Combed",
+                "P", "Hijau Botol", "Long");
+        list.add(newShirt3);
+
         int menu; // Variabel untuk menyimpan pilihan menu pengguna
         String ulang = "y"; // String untuk mengontrol kelanjutan loop
 
@@ -60,14 +74,14 @@ public class Main {
                 } else {
                     System.out.println("\nDaftar shirt :");
                     Tabel tab = new Tabel(list.size(), 9);
-            
+
                     int maxStrip = Shirt.getMaxId() + Shirt.getMaxName() + Shirt.getMaxbrand() + Shirt.getMaxsize()
                             + Shirt.getMaxmaterial() + Shirt.getMaxgender() + Shirt.getMaxcolor() + Shirt.getMaxprice();
                     for (int i = 0; i < maxStrip + ((2 * 9) + 10); i++) {
                         System.out.print("-");
                     }
                     System.out.println("");
-            
+
                     // Tampilkan data dalam format tabel menggunakan kelas Tabel
                     for (int i = 0; i < list.size(); i++) {
                         String[] arrstr = new String[9];
@@ -80,12 +94,11 @@ public class Main {
                         arrstr[6] = "" + list.get(i).getcolor();
                         arrstr[7] = "" + list.get(i).getsleeveType();
                         arrstr[8] = "" + list.get(i).getprice();
-            
+
                         tab.buatBaris(arrstr, 9);
                     }
                 }
-            }
-             else if (menu == 3) { // UPDATE
+            } else if (menu == 3) { // UPDATE
                 if (list.isEmpty()) {
                     System.out.println("Data Kosong\n");
                 } else {
